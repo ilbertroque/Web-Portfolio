@@ -8,6 +8,7 @@
 
 body{
     background: #eee;
+    min-width: 375px;
 }
 .wrapper {
     display: grid;
@@ -80,7 +81,7 @@ body{
     background-size: cover;
     height: 100vh;
     display: grid;
-    grid-template-columns: 10% 1fr 40% 1fr 10%;
+    grid-template-columns: 10% 15% 50% 15% 10%;
     grid-template-rows: 70% auto;
     grid-template-areas:
     ". social hContainer . ."
@@ -94,7 +95,7 @@ body{
         .h-wrapper{
             width: 100%;
             max-height: 10%;
-            text-align: center;
+            text-align: left;
             h1{
                 margin-bottom: 15px;
                 color: #fff;
@@ -104,8 +105,15 @@ body{
             }
             p{
                 color: #fff;
-                font-size: 1.5em;
+                font-size: 1.4em;
                 font-weight: 300;
+                span{
+                    line-height: 1.5em;
+                    font-size: 1.5em;
+                    .underlined{
+                       border-bottom: 1px solid #fff; 
+                    }
+                }
             }
         }
     }
@@ -133,7 +141,7 @@ body{
     }
 
     .read-more{
-        margin-bottom: 50px;
+        margin-bottom: 2vh;
         grid-area: arrow;
         display: flex;
         align-items: flex-end;
@@ -340,7 +348,7 @@ body{
         }
 
         ul{
-            margin-left: 80px;
+            margin-left: 50px;
             font-size: 1.2em;
             font-weight: 300;
             li{                 
@@ -413,7 +421,8 @@ body{
         grid-template-rows: auto;
         grid-template-areas:
         ". name email ."
-        ". message message .";
+        ". message message ."
+        ". submit . .";
         
         .name{ 
             grid-area: name;
@@ -456,6 +465,18 @@ body{
                 font-size: 15px;
             }
         }
+
+        .submit-button{
+            grid-area: submit;
+            background: #999;
+            border: none;
+            border-radius: 25px;
+            margin: 25px 0;
+            width: 150px;
+            height: 50px;
+            font-size: 1.3em;
+            transform: translateX(90px);
+        }
     }
 }
 
@@ -489,9 +510,28 @@ body{
 
 /* Portrait and Landscape */
 @media only screen 
-  and (min-width: 737px) 
+  and (min-width: 741px) 
   and (max-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
+
+    .header{
+        .header-container .h-wrapper{
+            h1{
+                font-size: 2.1em;
+            }
+
+            p{
+                font-size: 1.4em;
+                span{
+                    line-height: 2em;
+                    font-size: 1.1em;
+                    .underlined{
+                       border-bottom: 1px solid #fff; 
+                    }
+                }
+            }
+        }
+    }
 
     .section1{
         margin-bottom: 50px;
@@ -542,7 +582,8 @@ body{
             grid-template-areas:
             ". name ."
             ". email ."
-            ". message .";
+            ". message ."
+            ". submit .";
 
             .email, .name, .message{
                 padding: 0;
@@ -561,9 +602,16 @@ body{
 
 /* Portrait and Landscape */
 @media only screen 
-  and (min-width: 375px) 
-  and (max-width: 736px) 
+  and (min-width: 360px) 
+  and (max-width: 740px) 
   and (-webkit-min-device-pixel-ratio: 1) {
+
+    .nav-scrolled {
+        display: none !important;
+        height: 60px !important;
+        transition: 0.5s ease;
+    }
+
     .nav{
         grid-template-areas:
         ". logo logo ." !important;
@@ -584,11 +632,18 @@ body{
         ". arrow arrow arrow .";
         .h-wrapper{
             h1{
-                font-size: 2.5em !important;
+                font-size: 1.6em !important;
             }
 
             p{
-                font-size: 1.3em !important;
+                font-size: 1.2em !important;
+                span{
+                    line-height: 1.2em;
+                    font-size: 1.1em !important;
+                    .underlined{
+                       border-bottom: 1px solid #fff; 
+                    }
+                }
             }
         }
         .social-icons{
@@ -634,7 +689,6 @@ body{
 
         .p-wrapper{
             .project h3{
-                border: 2px solid red;
                 justify-self: center;
                 font-size: 1.3em;
             }
@@ -653,7 +707,8 @@ body{
             grid-template-areas:
             ". name ."
             ". email ."
-            ". message .";
+            ". message ."
+            ". submit .";
 
             .email, .name, .message{
                 padding: 0;
