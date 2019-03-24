@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
+
+$backgroundColor: rgb(26, 26, 26);
+$highlightColor: #4893ea;
+$textColor: #fff;
+$mainFont: 'Montserrat', sans-serif;
+$secondaryFont: 'Source Code Pro', monospace;
+* {
+	margin: 0;
+	padding: 0;
+	color: $textColor;
+	text-decoration: none;
+}
+
+body {
+	background: $backgroundColor;
+	font-family: $mainFont;
+	color: $textColor;
+}
+
+.highlight {
+	color: $highlightColor;
+}
+
+.muted {
+	opacity: 0.5;
+}
+
+.monospace {
+	font-family: $secondaryFont;
+}
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+	.lines-bg {
+		position: fixed;
+		z-index: -1;
+		height: 100%;
+		width: 60vw;
+		margin: 0 20vw;
+		display: flex;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 1px;
+		@media screen and (max-width: 600px) {
+			margin: 0 10vw;
+			width: 80vw;
+		}
+		.box {
+			position: relative;
+			display: flex;
+			flex-grow: 1;
+		}
+
+		.b1 {
+			border-left: 1px solid black;
+			border-right: 1px solid black;
+		}
+
+		.b2,
+		.b3,
+		.b4 {
+			border-right: 1px solid black;
+		}
+	}
+
+	.header {
+		z-index: 100;
+		width: 90vw;
+		margin: 0 5vw;
+		padding-top: 5vh;
+		position: absolute;
+
+		@media screen and (max-width: 1000px) {
+			padding-top: 2vh;
+			a {
+				img {
+					transform: scale(0.5);
+				}
+			}
+		}
+
+		@media screen and (max-width: 780px) {
+			display: flex;
+			justify-content: center;
+			padding-top: 2px;
+			a {
+				img {
+					transform: scale(0.4);
+				}
+			}
+		}
+	}
+
+	.social {
+		position: fixed;
+		transform: rotate(-90deg);
+		top: 40%;
+		right: -300px;
+		z-index: 99;
+		@media screen and (max-width: 460px) {
+			display: none;
+		}
+		ul {
+			li {
+				list-style-type: none;
+				display: inline-block;
+				margin: 0 10px;
+				a {
+					color: $textColor;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.section {
+		z-index: 50;
+		position: absolute;
+		width: 60vw;
+		margin: 0 20vw;
+		padding-top: 10vh;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 1px;
+		grid-template-areas: ". . hello hello" "mini . . ." "about about . ." ". skills skills skills" ". . msg msg"
+			"pHeading pHeading . ." ". . p1 p1" "p2 p2 . ." ". p3 p3 ." ". contact contact contact";
+
+		@media screen and (max-width: 1530px) {
+			grid-template-areas: ". hello hello hello" "mini . . ." "about about . ." ". skills skills skills"
+				". . msg msg" "pHeading pHeading . ." ". . p1 p1" "p2 p2 . ." ". p3 p3 ." ". contact contact contact";
+		}
+
+		@media screen and (max-width: 1360px) {
+			grid-template-areas: ". hello hello hello" "mini . . ." "about about . ." ". skills skills skills"
+				"msg msg  ." "pHeading pHeading . ." ". p1 p1 p1" "p2 p2 . ." ". p3 p3 ." "contact contact contact .";
+		}
+
+		@media screen and (max-width: 1000px) {
+			grid-template-areas: "hello hello hello hello" ". . mini mini" "about about about about"
+				". skills skills skills" "msg msg msg ." "pHeading pHeading . ." ". p1 p1 p1" "p2 p2 . ." ". p3 p3 ."
+				"contact contact contact .";
+		}
+
+		@media screen and (max-width: 600px) {
+			margin: 0 10vw;
+			width: 80vw;
+			grid-template-areas: "hello hello hello hello" "mini mini mini mini" "about about about about"
+				"skills skills skills skills" "msg msg msg msg" "pHeading pHeading pHeading pHeading" "p1 p1 p1 p1"
+				"p2 p2 p2 p2" "p3 p3 p3 p3" "contact contact contact contact";
+		}
+
+		.hello {
+			max-width: 500px;
+			grid-area: hello;
+			text-align: left;
+			p {
+				font-size: 2em;
+			}
+			h1 {
+				font-size: 9em;
+				font-weight: 700;
+				@media screen and (max-width: 1530px) {
+					font-size: 7em;
+				}
+
+				@media screen and (max-width: 600px) {
+					font-size: 4.2em;
+				}
+			}
+		}
+
+		.mini-info {
+			grid-area: mini;
+			height: fit-content;
+			max-width: 240px;
+			transform: rotate(-90deg) translateX(250px) translateY(-50%);
+			transform-origin: center;
+			@media screen and (max-width: 1000px) {
+				transform: rotate(0deg) translateX(0) translateY(0);
+			}
+			p {
+				font-size: 1.2em;
+				font-weight: 300;
+			}
+		}
+
+		.about {
+			max-width: 400px;
+			margin-top: 300px;
+			grid-area: about;
+
+			p {
+				font-size: 1.5em;
+				line-height: 1.6em;
+
+				@media screen and (max-width: 600px) {
+					font-size: 1.2em;
+					line-height: 1.4em;
+				}
+			}
+
+			h2 {
+				font-size: 5.2em;
+				@media screen and (max-width: 600px) {
+					font-size: 3.2em;
+				}
+			}
+		}
+
+		.skills {
+			margin-top: 200px;
+			grid-area: skills;
+			text-align: left;
+			h2 {
+				font-size: 5.2em;
+				@media screen and (max-width: 600px) {
+					font-size: 3.2em;
+				}
+			}
+			ul {
+				li {
+					list-style-type: none;
+					margin: 10px 10px;
+					font-size: 1.5em;
+					@media screen and (max-width: 600px) {
+						font-size: 1.2em;
+						line-height: 1.4em;
+					}
+				}
+			}
+		}
+
+		.side-message {
+			max-width: 400px;
+			margin-top: 200px;
+			grid-area: msg;
+
+			p {
+				margin: 0 10px;
+				font-size: 1.1em;
+			}
+
+			.message {
+				line-height: 1.6em;
+				font-size: 1.5em;
+				@media screen and (max-width: 600px) {
+					font-size: 1.2em;
+					line-height: 1.4em;
+				}
+			}
+		}
+
+		.projects-heading {
+			margin-top: 200px;
+			grid-area: pHeading;
+			h2 {
+				font-size: 5.2em;
+				@media screen and (max-width: 600px) {
+					font-size: 3.2em;
+				}
+			}
+		}
+
+		.project {
+			margin-top: 100px;
+			h3 {
+				font-size: 2em;
+			}
+
+			.p-image {
+				width: 300px;
+				height: 200px;
+				background-color: #4893ea;
+			}
+		}
+
+		.p1 {
+			grid-area: p1;
+		}
+
+		.p2 {
+			grid-area: p2;
+		}
+
+		.p3 {
+			grid-area: p3;
+		}
+
+		.contact {
+			//max-width: 400px;
+			grid-area: contact;
+			margin-top: 400px;
+			text-align: right;
+			h2 {
+				font-size: 5em;
+				@media screen and (max-width: 1360px) {
+					font-size: 3rem;
+				}
+			}
+
+			h1 {
+				color: coral;
+				text-decoration: line-through;
+				font-size: 7em;
+				@media screen and (max-width: 1360px) {
+					font-size: 5rem;
+				}
+			}
+
+			h1:hover {
+				cursor: pointer;
+				text-decoration: none;
+			}
+		}
+	}
+}
