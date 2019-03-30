@@ -62,6 +62,8 @@ body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  -webkit-animation: lineColorShift 2.5s linear;
+          animation: lineColorShift 2.5s linear;
 }
 
 .wrapper .lines-bg .b1 {
@@ -227,6 +229,8 @@ body {
   .wrapper .section .mini-info {
     -webkit-transform: rotate(0deg) translateX(0) translateY(0);
             transform: rotate(0deg) translateX(0) translateY(0);
+    -webkit-animation: slideLeft 1s ease;
+            animation: slideLeft 1s ease;
   }
 }
 
@@ -519,6 +523,24 @@ body {
   }
   to {
     height: 100%;
+  }
+}
+
+@-webkit-keyframes lineColorShift {
+  from {
+    border-color: #fff;
+  }
+  to {
+    border-color: #111;
+  }
+}
+
+@keyframes lineColorShift {
+  from {
+    border-color: #fff;
+  }
+  to {
+    border-color: #111;
   }
 }
 

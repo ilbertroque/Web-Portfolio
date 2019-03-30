@@ -55,6 +55,7 @@ body {
 			position: relative;
 			display: flex;
 			flex-grow: 1;
+			animation: lineColorShift 2.5s linear;
 		}
 
 		.b1 {
@@ -189,6 +190,7 @@ body {
 			animation: slideUp 1s ease;
 			@media screen and (max-width: 1000px) {
 				transform: rotate(0deg) translateX(0) translateY(0);
+				animation: slideLeft 1s ease;
 			}
 			p {
 				font-size: 1.2em;
@@ -396,6 +398,16 @@ body {
 
 	to {
 		height: 100%;
+	}
+}
+
+@keyframes lineColorShift {
+	from {
+		border-color: #fff;
+	}
+
+	to {
+		border-color: #111;
 	}
 }
 @keyframes slideLeft {
