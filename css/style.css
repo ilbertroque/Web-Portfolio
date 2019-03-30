@@ -523,6 +523,18 @@ body {
   text-decoration: underline;
 }
 
+@media screen and (max-device-width: 800px) {
+  .wrapper .section footer .social-h ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 10px;
+  }
+  .wrapper .section footer .social-h ul li a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
 @-webkit-keyframes lineFlow {
   from {
     height: 0%;

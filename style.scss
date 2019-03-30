@@ -399,6 +399,17 @@ body {
 							text-decoration: underline;
 						}
 					}
+					@media screen and (max-device-width: 800px) {
+						li {
+							list-style-type: none;
+							display: inline-block;
+							margin: 0 10px;
+							a {
+								color: $textColor;
+								text-decoration: underline;
+							}
+						}
+					}
 				}
 			}
 		}
