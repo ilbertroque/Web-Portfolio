@@ -225,7 +225,7 @@ body {
           animation: slideUp 1s ease;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-device-width: 1000px) and (orientation: portrait) {
   .wrapper .section .mini-info {
     -webkit-transform: rotate(0deg) translateX(0) translateY(0);
             transform: rotate(0deg) translateX(0) translateY(0);
