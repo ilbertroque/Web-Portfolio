@@ -21,12 +21,14 @@ body {
 }
 
 .monospace {
-  font-family: "Source Code Pro", monospace;
+  font-family: monospace;
+  font-size: 1.4em;
 }
 
 .wrapper {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .wrapper .lines-bg {
@@ -41,6 +43,8 @@ body {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 1px;
+  -webkit-animation: lineFlow 2.5s linear;
+          animation: lineFlow 2.5s linear;
 }
 
 @media screen and (max-width: 600px) {
@@ -76,7 +80,6 @@ body {
   width: 90vw;
   margin: 0 5vw;
   padding-top: 5vh;
-  position: absolute;
 }
 
 @media screen and (max-width: 1000px) {
@@ -110,11 +113,11 @@ body {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   top: 40%;
-  right: -300px;
+  right: -250px;
   z-index: 99;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 600px) {
   .wrapper .social {
     display: none;
   }
@@ -132,8 +135,8 @@ body {
 }
 
 .wrapper .section {
-  z-index: 50;
   position: absolute;
+  z-index: 50;
   width: 60vw;
   margin: 0 20vw;
   padding-top: 10vh;
@@ -142,24 +145,24 @@ body {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 1px;
-      grid-template-areas: ". . hello hello" "mini . . ." "about about . ." ". skills skills skills" ". . msg msg" "pHeading pHeading . ." ". . p1 p1" "p2 p2 . ." ". p3 p3 ." ". contact contact contact";
+      grid-template-areas: ". . hello hello" "mini . . ." "about about . ." ". skills skills skills" ". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact" "ftr ftr ftr ftr";
 }
 
 @media screen and (max-width: 1530px) {
   .wrapper .section {
-        grid-template-areas: ". hello hello hello" "mini . . ." "about about . ." ". skills skills skills" ". . msg msg" "pHeading pHeading . ." ". . p1 p1" "p2 p2 . ." ". p3 p3 ." ". contact contact contact";
+        grid-template-areas: ". hello hello hello" "mini . . ." "about about . ." ". skills skills skills" ". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact" "ftr ftr ftr ftr";
   }
 }
 
 @media screen and (max-width: 1360px) {
   .wrapper .section {
-        grid-template-areas: ". hello hello hello" "mini . . ." "about about . ." ". skills skills skills" "msg msg  ." "pHeading pHeading . ." ". p1 p1 p1" "p2 p2 . ." ". p3 p3 ." "contact contact contact .";
+        grid-template-areas: ". hello hello hello" "mini . . ." "about about . ." ". skills skills skills" "msg msg  ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "contact contact contact ." "ftr ftr ftr ftr";
   }
 }
 
 @media screen and (max-width: 1000px) {
   .wrapper .section {
-        grid-template-areas: "hello hello hello hello" ". . mini mini" "about about about about" ". skills skills skills" "msg msg msg ." "pHeading pHeading . ." ". p1 p1 p1" "p2 p2 . ." ". p3 p3 ." "contact contact contact .";
+        grid-template-areas: "hello hello hello hello" ". . mini mini" "about about about about" ". skills skills skills" "msg msg msg ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "contact contact contact contact" "ftr ftr ftr ftr";
   }
 }
 
@@ -167,7 +170,7 @@ body {
   .wrapper .section {
     margin: 0 10vw;
     width: 80vw;
-        grid-template-areas: "hello hello hello hello" "mini mini mini mini" "about about about about" "skills skills skills skills" "msg msg msg msg" "pHeading pHeading pHeading pHeading" "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3" "contact contact contact contact";
+        grid-template-areas: "hello hello hello hello" "mini mini mini mini" "about about about about" "skills skills skills skills" "msg msg msg msg" "pHeading pHeading pHeading pHeading" "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3" "contact contact contact contact" "ftr ftr ftr ftr";
   }
 }
 
@@ -178,6 +181,8 @@ body {
   -ms-grid-column-span: 2;
   grid-area: hello;
   text-align: left;
+  -webkit-animation: slideLeft 1s ease;
+          animation: slideLeft 1s ease;
 }
 
 .wrapper .section .hello p {
@@ -187,6 +192,7 @@ body {
 .wrapper .section .hello h1 {
   font-size: 9em;
   font-weight: 700;
+  color: #fff;
 }
 
 @media screen and (max-width: 1530px) {
@@ -213,6 +219,8 @@ body {
           transform: rotate(-90deg) translateX(250px) translateY(-50%);
   -webkit-transform-origin: center;
           transform-origin: center;
+  -webkit-animation: slideUp 1s ease;
+          animation: slideUp 1s ease;
 }
 
 @media screen and (max-width: 1000px) {
@@ -229,7 +237,7 @@ body {
 
 .wrapper .section .about {
   max-width: 400px;
-  margin-top: 300px;
+  margin-top: 200px;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -259,7 +267,7 @@ body {
 }
 
 .wrapper .section .skills {
-  margin-top: 200px;
+  margin-top: 100px;
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
@@ -292,7 +300,7 @@ body {
 
 .wrapper .section .side-message {
   max-width: 400px;
-  margin-top: 200px;
+  margin-top: 100px;
   -ms-grid-row: 5;
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
@@ -317,7 +325,7 @@ body {
 }
 
 .wrapper .section .projects-heading {
-  margin-top: 200px;
+  margin-top: 100px;
   -ms-grid-row: 6;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -335,51 +343,74 @@ body {
 }
 
 .wrapper .section .project {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .wrapper .section .project h3 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  font-weight: 300;
+  border-radius: 5px;
+  bottom: 10px;
+  left: 25%;
   font-size: 2em;
 }
 
 .wrapper .section .project .p-image {
-  width: 300px;
-  height: 200px;
-  background-color: #4893ea;
+  max-width: 700px;
+  height: auto;
+}
+
+.wrapper .section .project .p-image img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.wrapper .section .project .p-image img:hover {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .wrapper .section .p1 {
   -ms-grid-row: 7;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
   grid-area: p1;
 }
 
 .wrapper .section .p2 {
   -ms-grid-row: 8;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 4;
   grid-area: p2;
 }
 
-.wrapper .section .p3 {
-  -ms-grid-row: 9;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-area: p3;
-}
-
 .wrapper .section .contact {
-  -ms-grid-row: 10;
+  -ms-grid-row: 9;
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-area: contact;
-  margin-top: 400px;
+  margin-top: 200px;
   text-align: right;
 }
 
 .wrapper .section .contact h2 {
   font-size: 5em;
+  line-height: 1.5em;
 }
 
 @media screen and (max-width: 1360px) {
@@ -388,20 +419,127 @@ body {
   }
 }
 
+@media screen and (max-width: 420px) {
+  .wrapper .section .contact h2 {
+    font-size: 2rem;
+  }
+}
+
 .wrapper .section .contact h1 {
-  color: coral;
-  text-decoration: line-through;
   font-size: 7em;
 }
 
 @media screen and (max-width: 1360px) {
-  .wrapper .section .contact h1 {
+  .wrapper .section .contact h1 a {
     font-size: 5rem;
   }
 }
 
-.wrapper .section .contact h1:hover {
+@media screen and (max-width: 690px) {
+  .wrapper .section .contact h1 a {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .wrapper .section .contact h1 a {
+    font-size: 3rem;
+  }
+}
+
+.wrapper .section .contact h1 a:hover {
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: underline;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.wrapper .section footer {
+  -ms-grid-row: 10;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: ftr;
+  margin-top: 100px;
+  padding: 50px 0;
+}
+
+@-webkit-keyframes lineFlow {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes lineFlow {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes slideLeft {
+  from {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideUp {
+  from {
+    -webkit-transform: rotate(-90deg) translateX(-250px) translateY(-50%);
+            transform: rotate(-90deg) translateX(-250px) translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: rotate(-90deg) translateX(250px) translateY(-50%);
+            transform: rotate(-90deg) translateX(250px) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    -webkit-transform: rotate(-90deg) translateX(-250px) translateY(-50%);
+            transform: rotate(-90deg) translateX(-250px) translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: rotate(-90deg) translateX(250px) translateY(-50%);
+            transform: rotate(-90deg) translateX(250px) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes show {
+  from {
+  }
+}
+
+@keyframes show {
+  from {
+  }
 }
 /*# sourceMappingURL=style.css.map */
