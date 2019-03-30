@@ -411,8 +411,8 @@ body {
   max-width: 100%;
   height: auto;
   display: inline-block;
-  -webkit-filter: brightness(50%);
-          filter: brightness(50%);
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
