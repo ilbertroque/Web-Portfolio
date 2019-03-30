@@ -127,18 +127,19 @@ body {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-gap: 1px;
-		grid-template-areas: ". . hello hello" "mini . . ." "about about . ." ". skills skills skills" ". . msg msg"
-			"pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact" "ftr ftr ftr ftr";
+		grid-template-areas: ". . hello hello" "mini . . ." "about about about about" ". skills skills skills"
+			". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact"
+			"ftr ftr ftr ftr";
 
 		@media screen and (max-width: 1530px) {
-			grid-template-areas: ". hello hello hello" "mini . . ." "about about . ." ". skills skills skills"
+			grid-template-areas: ". hello hello hello" "mini . . ." "about about about about" ". skills skills skills"
 				". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact"
 				"ftr ftr ftr ftr";
 		}
 
 		@media screen and (max-width: 1360px) {
-			grid-template-areas: ". hello hello hello" "mini . . ." "about about . ." ". skills skills skills"
-				"msg msg  ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "contact contact contact ."
+			grid-template-areas: ". hello hello hello" "mini . . ." "about about about about" ". skills skills skills"
+				"msg msg . ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "contact contact contact ."
 				"ftr ftr ftr ftr";
 		}
 
@@ -196,24 +197,51 @@ body {
 		}
 
 		.about {
-			max-width: 400px;
+			padding-right: 20px;
 			margin-top: 200px;
 			grid-area: about;
 
-			p {
-				font-size: 1.5em;
-				line-height: 1.6em;
-				@media screen and (max-width: 600px) {
-					font-size: 1.2em;
-					line-height: 1.4em;
+			.about-wrap {
+				padding: 20px 0;
+				display: flex;
+				justify-content: space-between;
+				.profile-img {
+					order: 2;
+					max-width: 400px;
+					height: auto;
+					img {
+						max-width: 100%;
+						height: auto;
+					}
 				}
-			}
 
-			h2 {
-				font-size: 5.2em;
+				.about-info {
+					order: 1;
+					max-width: 400px;
+					padding-right: 20px;
+					p {
+						font-size: 1.5em;
+						line-height: 1.6em;
+						@media screen and (max-width: 600px) {
+							font-size: 1.2em;
+							line-height: 1.4em;
+						}
+					}
 
-				@media screen and (max-width: 600px) {
-					font-size: 3.2em;
+					h2 {
+						font-size: 5.2em;
+
+						@media screen and (max-width: 600px) {
+							font-size: 3.2em;
+						}
+					}
+				}
+
+				@media screen and (max-width: 1160px) {
+					display: block;
+					.about-info {
+						padding-top: 20px;
+					}
 				}
 			}
 		}
@@ -356,6 +384,7 @@ body {
 			grid-area: ftr;
 			margin-top: 100px;
 			padding: 50px 0;
+			text-align: center;
 		}
 	}
 }

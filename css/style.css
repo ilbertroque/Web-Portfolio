@@ -145,18 +145,18 @@ body {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 1px;
-      grid-template-areas: ". . hello hello" "mini . . ." "about about . ." ". skills skills skills" ". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact" "ftr ftr ftr ftr";
+      grid-template-areas: ". . hello hello" "mini . . ." "about about about about" ". skills skills skills" ". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact" "ftr ftr ftr ftr";
 }
 
 @media screen and (max-width: 1530px) {
   .wrapper .section {
-        grid-template-areas: ". hello hello hello" "mini . . ." "about about . ." ". skills skills skills" ". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact" "ftr ftr ftr ftr";
+        grid-template-areas: ". hello hello hello" "mini . . ." "about about about about" ". skills skills skills" ". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact" "ftr ftr ftr ftr";
   }
 }
 
 @media screen and (max-width: 1360px) {
   .wrapper .section {
-        grid-template-areas: ". hello hello hello" "mini . . ." "about about . ." ". skills skills skills" "msg msg  ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "contact contact contact ." "ftr ftr ftr ftr";
+        grid-template-areas: ". hello hello hello" "mini . . ." "about about about about" ". skills skills skills" "msg msg . ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "contact contact contact ." "ftr ftr ftr ftr";
   }
 }
 
@@ -236,33 +236,73 @@ body {
 }
 
 .wrapper .section .about {
-  max-width: 400px;
+  padding-right: 20px;
   margin-top: 200px;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 4;
   grid-area: about;
 }
 
-.wrapper .section .about p {
+.wrapper .section .about .about-wrap {
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper .section .about .about-wrap .profile-img {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  max-width: 400px;
+  height: auto;
+}
+
+.wrapper .section .about .about-wrap .profile-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper .section .about .about-wrap .about-info {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  max-width: 400px;
+  padding-right: 20px;
+}
+
+.wrapper .section .about .about-wrap .about-info p {
   font-size: 1.5em;
   line-height: 1.6em;
 }
 
 @media screen and (max-width: 600px) {
-  .wrapper .section .about p {
+  .wrapper .section .about .about-wrap .about-info p {
     font-size: 1.2em;
     line-height: 1.4em;
   }
 }
 
-.wrapper .section .about h2 {
+.wrapper .section .about .about-wrap .about-info h2 {
   font-size: 5.2em;
 }
 
 @media screen and (max-width: 600px) {
-  .wrapper .section .about h2 {
+  .wrapper .section .about .about-wrap .about-info h2 {
     font-size: 3.2em;
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .wrapper .section .about .about-wrap {
+    display: block;
+  }
+  .wrapper .section .about .about-wrap .about-info {
+    padding-top: 20px;
   }
 }
 
@@ -461,6 +501,7 @@ body {
   grid-area: ftr;
   margin-top: 100px;
   padding: 50px 0;
+  text-align: center;
 }
 
 @-webkit-keyframes lineFlow {
