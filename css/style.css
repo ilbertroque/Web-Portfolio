@@ -147,24 +147,24 @@ body {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 1px;
-      grid-template-areas: ". . hello hello" "mini . . ." "about about about about" ". skills skills skills" ". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3" ". contact contact contact" "ftr ftr ftr ftr";
+      grid-template-areas: ". . hello hello" "mini . . ." "about about about about" ". skills skills skills" ". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact" "ftr ftr ftr ftr";
 }
 
 @media screen and (max-width: 1530px) {
   .wrapper .section {
-        grid-template-areas: ". hello hello hello" "mini . . ." "about about about about" ". skills skills skills" ". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3" ". contact contact contact" "ftr ftr ftr ftr";
+        grid-template-areas: ". hello hello hello" "mini . . ." "about about about about" ". skills skills skills" ". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact" "ftr ftr ftr ftr";
   }
 }
 
 @media screen and (max-width: 1360px) {
   .wrapper .section {
-        grid-template-areas: ". hello hello hello" "mini . . ." "about about about about" ". skills skills skills" "msg msg . ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3" "contact contact contact ." "ftr ftr ftr ftr";
+        grid-template-areas: ". hello hello hello" "mini . . ." "about about about about" ". skills skills skills" "msg msg . ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "contact contact contact ." "ftr ftr ftr ftr";
   }
 }
 
 @media screen and (max-width: 1000px) {
   .wrapper .section {
-        grid-template-areas: "hello hello hello hello" ". . mini mini" "about about about about" ". skills skills skills" "msg msg msg ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3" "contact contact contact contact" "ftr ftr ftr ftr";
+        grid-template-areas: "hello hello hello hello" ". . mini mini" "about about about about" ". skills skills skills" "msg msg msg ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "contact contact contact contact" "ftr ftr ftr ftr";
   }
 }
 
@@ -172,7 +172,7 @@ body {
   .wrapper .section {
     margin: 0 10vw;
     width: 80vw;
-        grid-template-areas: "hello hello hello hello" "mini mini mini mini" "about about about about" "skills skills skills skills" "msg msg msg msg" "pHeading pHeading pHeading pHeading" "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3" "contact contact contact contact" "ftr ftr ftr ftr";
+        grid-template-areas: "hello hello hello hello" "mini mini mini mini" "about about about about" "skills skills skills skills" "msg msg msg msg" "pHeading pHeading pHeading pHeading" "p1 p1 p1 p1" "p2 p2 p2 p2" "contact contact contact contact" "ftr ftr ftr ftr";
   }
 }
 
@@ -443,15 +443,8 @@ body {
   grid-area: p2;
 }
 
-.wrapper .section .p3 {
-  -ms-grid-row: 9;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-area: p3;
-}
-
 .wrapper .section .contact {
-  -ms-grid-row: 10;
+  -ms-grid-row: 9;
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-area: contact;
@@ -506,7 +499,7 @@ body {
 }
 
 .wrapper .section footer {
-  -ms-grid-row: 11;
+  -ms-grid-row: 10;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: ftr;
