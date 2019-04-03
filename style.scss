@@ -129,25 +129,25 @@ body {
 		grid-template-columns: repeat(4, 1fr);
 		grid-gap: 1px;
 		grid-template-areas: ". . hello hello" "mini . . ." "about about about about" ". skills skills skills"
-			". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact"
+			". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3" ". contact contact contact"
 			"ftr ftr ftr ftr";
 
 		@media screen and (max-width: 1530px) {
 			grid-template-areas: ". hello hello hello" "mini . . ." "about about about about" ". skills skills skills"
-				". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" ". contact contact contact"
-				"ftr ftr ftr ftr";
+				". . msg msg" "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3"
+				". contact contact contact" "ftr ftr ftr ftr";
 		}
 
 		@media screen and (max-width: 1360px) {
 			grid-template-areas: ". hello hello hello" "mini . . ." "about about about about" ". skills skills skills"
-				"msg msg . ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "contact contact contact ."
-				"ftr ftr ftr ftr";
+				"msg msg . ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3"
+				"contact contact contact ." "ftr ftr ftr ftr";
 		}
 
 		@media screen and (max-width: 1000px) {
 			grid-template-areas: "hello hello hello hello" ". . mini mini" "about about about about"
 				". skills skills skills" "msg msg msg ." "pHeading pHeading . ." "p1 p1 p1 p1" "p2 p2 p2 p2"
-				"contact contact contact contact" "ftr ftr ftr ftr";
+				"p3 p3 p3 p3" "contact contact contact contact" "ftr ftr ftr ftr";
 		}
 
 		@media screen and (max-width: 600px) {
@@ -342,6 +342,10 @@ body {
 
 		.p2 {
 			grid-area: p2;
+		}
+
+		.p3 {
+			grid-area: p3;
 		}
 
 		.contact {
