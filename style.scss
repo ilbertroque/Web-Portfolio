@@ -188,7 +188,7 @@ body {
 			transform: rotate(-90deg) translateX(250px) translateY(-50%);
 			transform-origin: center;
 			animation: slideUp 1s ease;
-			@media screen and (max-device-width: 1000px) {
+			@media screen and (max-width: 1000px) {
 				transform: rotate(0deg) translateX(0) translateY(0);
 				animation: slideLeft 1s ease;
 			}
